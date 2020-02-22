@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LocalStorage textarea history</title>
+</head>
+<body>
+  <style>
+    .textarea-field button {
+      display: none;
+    }
+
+    .textarea-field .active {
+      display: block;
+    }
+    .active {
+      border: 1px solid red;
+    }
+  </style>
+    <div class="local-block">
+      <div class="textarea-field">
+        <textarea name="local" id="local-text" cols="60" rows="30"></textarea>
+        <button class="local-nav-btn local-prev" id="prev">-</button>
+        <button class="local-nav-btn local-next" id="next">+</button>
+      </div>
+    </div>
+  <script src="script.js"></script>
+</body>
+</html>
