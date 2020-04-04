@@ -5,7 +5,7 @@ let local = document.querySelector('.local-block'),
   window.onload = saveHistory(textArea); //init saveHistory func on window's load
 
 function saveHistory(elem) {//save chenges of text in textarea into the localStorage
-  var key = elem.tagName.toLowerCase();
+  const key = elem.tagName.toLowerCase();
   if (localStorage[key]) { // if key exists on localStorage
     showButton(key, elem);
     elem.value = JSON.parse(localStorage[key]).pop();//display last item (history) of elem in LS on textarea
@@ -14,7 +14,7 @@ function saveHistory(elem) {//save chenges of text in textarea into the localSto
 }
 
 function setHistory(key, elem) { //set history to the ls
-  var arr = [];
+  const arr = [];
   return function () {
     arr.push(elem.value);
     localStorage.setItem(key, JSON.stringify(arr));
@@ -23,7 +23,7 @@ function setHistory(key, elem) { //set history to the ls
 }
 
 function showButton(key, elem) { //display buttons func
-  let buttonPrev = elem.parentElement.querySelector('#prev'),
+  const buttonPrev = elem.parentElement.querySelector('#prev'),
       buttonNext = elem.parentElement.querySelector('#next');
 
   addActiveClass(buttonPrev, buttonNext);
